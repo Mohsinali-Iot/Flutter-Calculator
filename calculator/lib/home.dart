@@ -14,11 +14,19 @@ var result="";
   Widget btn(var ttext){
   return ElevatedButton(onPressed: (){
     setState(() {
-      result=ttext;
+      result=result+ttext;
     });
   
 
   }, child: Text(ttext));
+}
+
+clearr(){
+  setState(() {
+    
+  result="";
+    
+  });
 }
 
   @override
@@ -61,7 +69,7 @@ var result="";
             children:[
             btn('*'),
             btn('/'),
-            btn('clear'),
+            ElevatedButton(onPressed: clearr, child: Text('Clear')),
             btn('='),
           ]),
         ],)
