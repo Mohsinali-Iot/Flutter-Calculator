@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:math_expressions/math_expressions.dart';
+
 class Calculatorapp extends StatefulWidget {
 
 
@@ -28,16 +30,33 @@ clearr(){
     
   });
 }
+output(){
+  Parser p = Parser();
+  Expression exp = p.parse(result);
+  ContextModel cm = ContextModel();
+  double eval = exp.evaluate(EvaluationType.REAL, cm);
+
+  setState(() {
+    result=eval.toString();
+  });
+
+}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
+          SizedBox(height:30),
           Text(result ,style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+          
+          SizedBox(height:30),
           Row(
+            
             mainAxisAlignment: MainAxisAlignment.spaceAround,
+            
             children:[
+
             btn('1'),
             btn('2'),
             btn('3'),
@@ -70,7 +89,8 @@ clearr(){
             btn('*'),
             btn('/'),
             ElevatedButton(onPressed: clearr, child: Text('Clear')),
-            btn('='),
+            ElevatedButton(onPressed: output, child: Text('=')),
+            
           ]),
         ],)
       
