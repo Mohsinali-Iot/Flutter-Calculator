@@ -8,7 +8,7 @@ A new Flutter project.
 
 ## Add following lines in pubspec.yaml file under dependencies heading
 
-  # math_expressions: ^2.1.1
+  ### math_expressions: ^2.1.1
   
   ## Import where you want to use
   
