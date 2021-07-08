@@ -6,12 +6,12 @@ A new Flutter project.
 
 
 
-### add following lines in pubspec.yaml file under dependencies heading
+## Add following lines in pubspec.yaml file under dependencies heading
 
-  ## math_expressions: ^2.1.1
+  # math_expressions: ^2.1.1
   
-  ### import where you want to use
+  ## Import where you want to use
   
-  ## import 'package:math_expressions/math_expressions.dart';
+  ### import 'package:math_expressions/math_expressions.dart';
   
 
